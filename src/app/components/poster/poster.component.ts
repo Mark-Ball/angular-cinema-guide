@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { createImagePath } from '../../services/utils';
 
 @Component({
   selector: 'app-poster',
@@ -14,7 +15,7 @@ export class PosterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.imagePath = 'assets/images/' + this.item.image;
+    this.imagePath = createImagePath(this.item.image);
     this.linkName = `/${this.type}s/${this.item.name}`;
   }
 

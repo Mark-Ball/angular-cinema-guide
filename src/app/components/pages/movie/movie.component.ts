@@ -8,21 +8,22 @@ import { movies } from '../../../model/data';
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit {
-  movie: object;
+  movie: any;
   searchString: string;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      // transforms search string, e.g. the-dark-knight to The Dark Knight
-      this.searchString = params
-        .get('movieId')
-        .split('-')
-        .map(i => i[0].toUpperCase() + i.substr(1))
-        .join(' ');
+      this.searchString = params.get('movieId');
     })
 
+    // iterate through movies, find the movie corresponding to the search string
+    for (let element of movies) {
+      if (element.name === this.searchString) {
+        this.movie = element;
+      }
+    }
   }
 
 }
