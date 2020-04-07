@@ -21,8 +21,8 @@ export class MovieComponent implements OnInit {
         .split('-')
         .map(i => i[0].toUpperCase() + i.substr(1))
         .join(' ');
-      console.log(this.searchString);
     })
+
   }
 
 }
