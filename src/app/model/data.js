@@ -3,6 +3,7 @@ import { CONSTANTS } from '../constants';
 export const movies = [
 	{
 		name: 'The Dark Knight',
+		image: 'the-dark-knight.jpg',
 		cinemas: [
 			{ 
 				name: CONSTANTS.HOYTS_CHATSWOOD,
@@ -20,6 +21,7 @@ export const movies = [
 	},
 	{
 		name: 'The Thing',
+		image: 'the-thing.jpg',
 		cinemas: [
 			{
 				name: CONSTANTS.HOYTS_CHATSWOOD,
@@ -33,6 +35,7 @@ export const movies = [
 	},
 	{
 		name: 'John Wick',
+		image: 'john-wick.jpg',
 		cinemas: [
 			{
 				name: CONSTANTS.HOYTS_CHATSWOOD,

@@ -6,12 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./poster.component.scss']
 })
 export class PosterComponent implements OnInit {
-  @Input() movie: object;
+  @Input() item: any;
+  imagePath: string;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.movie);
+    this.imagePath = 'assets/images/' + this.item.image;
+    console.log(this.imagePath);
   }
 
 }
