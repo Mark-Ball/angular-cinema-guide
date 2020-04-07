@@ -1,0 +1,17 @@
+.container {
+    background-color: red;
+    border: 1px solid black;
+    cursor: pointer;
+    height: 300px;
+    width: 200px;
+    margin: 20px;
+}
+
+div :nth-child(1) {
+    height: 90%;
+}
+
+div :nth-child(2) {
+    background-color: white;
+    height: 10%;
+}

@@ -1,2 +1,4 @@
 <h1>Now Showing</h1>
-<p>{{ movies[0].name }}</p>
+<div>
+    <app-poster *ngFor='let movie of movies' [movie]="movie"></app-poster>
+</div>

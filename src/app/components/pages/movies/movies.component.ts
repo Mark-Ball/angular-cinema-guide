@@ -7,6 +7,7 @@ import { movies } from '../../../model/data';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
+	movies = [Object];
 
   constructor() { }
 
