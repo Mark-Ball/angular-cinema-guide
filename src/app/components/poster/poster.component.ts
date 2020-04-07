@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { transformName } from '../../services/utils'; 
 
 @Component({
   selector: 'app-poster',
@@ -16,8 +15,7 @@ export class PosterComponent implements OnInit {
 
   ngOnInit(): void {
     this.imagePath = 'assets/images/' + this.item.image;
-    this.linkName = `/${this.type}s/${transformName(this.item.name)}`;
+    this.linkName = `/${this.type}s/${this.item.name}`;
   }
 
-  
 }
