@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { movies } from '../../../model/data';
+import { createImagePath } from '../../../services/utils';
 
 @Component({
   selector: 'app-movie',
@@ -10,10 +11,12 @@ import { movies } from '../../../model/data';
 export class MovieComponent implements OnInit {
   movie: any;
   searchString: string;
+  imagePath: string;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    // extract search string from params
     this.route.paramMap.subscribe(params => {
       this.searchString = params.get('movieId');
     })
@@ -24,6 +27,8 @@ export class MovieComponent implements OnInit {
         this.movie = element;
       }
     }
+
+    this.imagePath = createImagePath(this.movie.image);
   }
 
 }

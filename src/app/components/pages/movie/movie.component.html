@@ -1,4 +1,8 @@
-
+<img src={{imagePath}}>
 <p>{{ movie.name }}</p>
 <p>{{ movie.description }}</p>
-
+<h2>Screenings</h2>
+<div *ngFor="let cinema of movie.cinemas">
+	<p>{{ cinema.name }}</p>
+	<p>{{ cinema.times }}</p>
+</div>
