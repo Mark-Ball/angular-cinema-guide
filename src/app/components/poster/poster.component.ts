@@ -13,7 +13,6 @@ export class PosterComponent implements OnInit {
 
   ngOnInit(): void {
     this.imagePath = 'assets/images/' + this.item.image;
-    console.log(this.imagePath);
   }
 
 }
