@@ -1,0 +1,23 @@
+header {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: #16181a;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 50%;
+}
+
+h1 {
+    color: #e8ebed;
+}
+
+a {
+    color: #d7d9db;
+    text-decoration: none;
+    margin: 0;
+}
