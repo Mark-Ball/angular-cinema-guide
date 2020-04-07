@@ -8,11 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PosterComponent implements OnInit {
   @Input() item: any;
   imagePath: string;
+  linkTo: string;
 
   constructor() { }
 
   ngOnInit(): void {
     this.imagePath = 'assets/images/' + this.item.image;
+  
   }
 
 }
