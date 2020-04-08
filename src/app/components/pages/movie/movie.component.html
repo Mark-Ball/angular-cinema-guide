@@ -9,6 +9,10 @@
 	<h2>Screenings</h2>
 	<div class='flex' *ngFor="let cinema of movie.cinemas">
 		<p>{{ cinema.name }}:</p>
-		<p *ngFor="let time of cinema.times">{{ time }}</p>
+		<p
+			(click)="deleteTime(movie.name, cinema.name, i)"
+			*ngFor="let time of cinema.times; let i = index"
+			[attr.data-index]="i"
+		>{{ time }}</p>
 	</div>
 </div>

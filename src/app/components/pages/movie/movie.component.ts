@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { movies } from '../../../model/data';
+import { movies } from '../../../models/data';
 import { createImagePath } from '../../../services/utils';
 
 @Component({
@@ -29,6 +29,20 @@ export class MovieComponent implements OnInit {
     }
 
     this.imagePath = createImagePath(this.movie.image);
+  }
+
+  deleteTime = (movieName, cinemaName, time) => {
+    console.log('deleteTime called:', movieName, cinemaName, time);
+    // go through movies array
+    // find correct movie
+    // find correct cinema
+    // delete time
+
+    // for (let element of movies) {
+    //   if (element.name == movieName) {
+    //     for (let cinemas.)
+    //   }
+    // }
   }
 
 }
