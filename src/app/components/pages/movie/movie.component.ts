@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from '../../../models/Movie';
+import { MovieService } from '../../../services/movie.service';
 import { movies } from '../../../models/data';
 import { createImagePath } from '../../../services/utils';
 
@@ -11,24 +12,18 @@ import { createImagePath } from '../../../services/utils';
 })
 export class MovieComponent implements OnInit {
   movie: Movie;
-  id: string;
+  id: number;
   imagePath: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private movieService: MovieService) { }
 
   ngOnInit(): void {
     // extract id from params
     this.route.paramMap.subscribe(params => {
-      this.id = params.get('movieId');
+      this.id = parseInt(params.get('movieId'));
     })
-
-    // iterate through movies, find the movie corresponding to the id
-    for (let element of movies) {
-      if (element.id == this.id) {
-        this.movie = element;
-      }
-    }
-
+    // get movie based on id
+    this.movie = this.movieService.getMovie(this.id);
     this.imagePath = createImagePath(this.movie.image);
   }
 
