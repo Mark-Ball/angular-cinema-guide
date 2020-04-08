@@ -14,7 +14,7 @@ export class MovieService {
     return this.movies;
   }
 
-  getMovie(id: string): Movie {
-    return this.movies.filter(movie => movie.id == id)[0];
+  getMovie(id: number): Movie {
+    return this.movies.filter(movie => movie.id === id)[0];
   }
 }
