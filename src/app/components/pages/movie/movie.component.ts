@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Movie } from '../../../models/Movie';
 import { movies } from '../../../models/data';
 import { createImagePath } from '../../../services/utils';
 
@@ -9,40 +10,26 @@ import { createImagePath } from '../../../services/utils';
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit {
-  movie: any;
-  searchString: string;
+  movie: Movie;
+  id: string;
   imagePath: string;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // extract search string from params
+    // extract id from params
     this.route.paramMap.subscribe(params => {
-      this.searchString = params.get('movieId');
+      this.id = params.get('movieId');
     })
 
-    // iterate through movies, find the movie corresponding to the search string
+    // iterate through movies, find the movie corresponding to the id
     for (let element of movies) {
-      if (element.name === this.searchString) {
+      if (element.id == this.id) {
         this.movie = element;
       }
     }
 
     this.imagePath = createImagePath(this.movie.image);
-  }
-
-  deleteTime = (movieName, cinemaName, time) => {
-    console.log('deleteTime called:', movieName, cinemaName, time);
-    // go through movies array
-    // find correct movie
-    // find correct cinema
-    // delete time
-
-    // for (let element of movies) {
-    //   if (element.name == movieName) {
-    //     for (let cinemas.)
-    //   }
-    // }
   }
 
 }

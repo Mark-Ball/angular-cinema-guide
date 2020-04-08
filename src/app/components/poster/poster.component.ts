@@ -16,7 +16,7 @@ export class PosterComponent implements OnInit {
 
   ngOnInit(): void {
     this.imagePath = createImagePath(this.item.image);
-    this.linkName = `/${this.type}s/${this.item.name}`;
+    this.linkName = `/${this.type}s/${this.item.id}`;
   }
 
 }

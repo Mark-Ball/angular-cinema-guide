@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from '../../../models/Movie';
 import { movies } from '../../../models/data';
 
 @Component({
@@ -7,7 +8,7 @@ import { movies } from '../../../models/data';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
-	movies = [Object];
+	movies: Movie[];
 
   constructor() { }
 
