@@ -1,8 +1,14 @@
-<img src={{imagePath}}>
-<p>{{ movie.name }}</p>
-<p>{{ movie.description }}</p>
-<h2>Screenings</h2>
-<div *ngFor="let cinema of movie.cinemas">
-	<p>{{ cinema.name }}</p>
-	<p>{{ cinema.times }}</p>
+<div class='flex'>
+	<img src={{imagePath}}>
+	<div>
+		<h1>{{ movie.name }}</h1>
+		<p>{{ movie.description }}</p>
+	</div>
+</div>
+<div>
+	<h2>Screenings</h2>
+	<div class='flex' *ngFor="let cinema of movie.cinemas">
+		<p>{{ cinema.name }}:</p>
+		<p *ngFor="let time of cinema.times">{{ time }}</p>
+	</div>
 </div>
