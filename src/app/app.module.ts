@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PosterComponent } from './components/poster/poster.component';
 import { MovieComponent } from './components/pages/movie/movie.component';
+import { AddMovieFormComponent } from './components/forms/add-movie-form/add-movie-form.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { MovieComponent } from './components/pages/movie/movie.component';
     HomeComponent,
     NavbarComponent,
     PosterComponent,
-    MovieComponent
+    MovieComponent,
+    AddMovieFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
