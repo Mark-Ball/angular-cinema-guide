@@ -17,4 +17,14 @@ export class MovieService {
   getMovie(id: number): Movie {
     return this.movies.filter(movie => movie.id === id)[0];
   }
+
+  createMovie(movie: Movie): void {
+    this.movies.push({
+      id: this.getMovies().length + 1,
+      name: movie.name,
+      image: movie.image,
+      description: movie.description
+    });
+    console.log(this.movies);
+  }
 }

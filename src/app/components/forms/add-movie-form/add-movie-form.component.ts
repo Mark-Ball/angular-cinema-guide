@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../../../models/Movie';
+import { MovieService } from '../../../services/movie.service';
 
 @Component({
   selector: 'app-add-movie-form',
@@ -9,15 +10,13 @@ import { Movie } from '../../../models/Movie';
 export class AddMovieFormComponent implements OnInit {
   movie = new Movie(99, '', '', '');
 
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-    console.log('submitted');
+    this.movieService.createMovie(this.movie);
   }
-
-  get diagnostic() { return JSON.stringify(this.movie); }
 
 }
