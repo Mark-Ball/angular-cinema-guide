@@ -7,7 +7,10 @@
 </div>
 <div>
 	<h2>Screenings</h2>
-	<div class='flex' *ngFor="let cinema of cinemas">
-		<p>{{ cinema.name }}:</p>
+	<div class='flex' *ngFor="let item of screeningsByCinema">
+		<ng-container *ngIf="item.screenings[0]">
+			<p>{{ item.cinemaName }}:</p>
+			<p *ngFor="let screening of item.screenings">{{ screening.time }}</p>
+		</ng-container>
 	</div>
 </div>

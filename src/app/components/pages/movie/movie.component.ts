@@ -48,7 +48,7 @@ export class MovieComponent implements OnInit {
     for (let i = 1; i <= this.cinemas.length; i++) {
       result.push({
         cinemaId: i,
-        cinemaName: this.cinemas[i],
+        cinemaName: this.cinemas[i - 1].name,
         screenings: this.screeningService.getScreenings(this.id, i)
       })
     }
