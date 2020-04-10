@@ -4,6 +4,7 @@ import { Cinema } from '../../../models/Cinema';
 import { Screening } from '../../../models/Screening';
 import { MovieService } from '../../../services/movie.service';
 import { CinemaService } from '../../../services/cinema.service';
+import { ScreeningService } from '../../../services/screening.service';
 
 @Component({
   selector: 'app-add-screening-form',
@@ -17,7 +18,8 @@ export class AddScreeningFormComponent implements OnInit {
 
   constructor(
     private movieService: MovieService,
-    private cinemaService: CinemaService
+    private cinemaService: CinemaService,
+    private screeningService: ScreeningService
   ) { }
 
   ngOnInit(): void {
@@ -26,7 +28,8 @@ export class AddScreeningFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('screening form submitted');
+    const { movieId, cinemaId, time } = this.screening;
+    this.screeningService.createScreening(movieId, cinemaId, time);
   }
 
   get diagnostic() {
