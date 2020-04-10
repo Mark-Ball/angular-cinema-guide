@@ -1,8 +1,7 @@
-{{ diagnostic }}
 <div class="container">
     <h1>Enter details for a new screening</h1>
     <form (ngSubmit)="onSubmit(); screeningForm.reset()" #screeningForm="ngForm">
-        <div class="form-group">
+        <div [hidden]="renderedInsideOf==='cinema'" class="form-group">
             <label for="cinema">Cinema</label>
             <select
                 class="form-control"
@@ -14,7 +13,7 @@
                 <option *ngFor="let cinema of cinemas; index as i" [value]="i + 1">{{ cinema.name }}</option>
             </select>
         </div>
-        <div class="form-group">
+        <div [hidden]="renderedInsideOf==='movie'" class="form-group">
             <label for="movie">Movie</label>
             <select
                 class="form-control"

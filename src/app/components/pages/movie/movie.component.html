@@ -15,5 +15,7 @@
 	</div>
 </div>
 <app-add-screening-form
+	[renderedInsideOf]="'movie'"
+	[resourceId]="movie.id"
 	(updater)="updateScreenings()"
 ></app-add-screening-form>
