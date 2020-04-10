@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PosterComponent } from './components/poster/poster.component';
 import { MovieComponent } from './components/pages/movie/movie.component';
 import { AddMovieFormComponent } from './components/forms/add-movie-form/add-movie-form.component';
+import { AddScreeningFormComponent } from './components/forms/add-screening-form/add-screening-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddMovieFormComponent } from './components/forms/add-movie-form/add-mov
     NavbarComponent,
     PosterComponent,
     MovieComponent,
-    AddMovieFormComponent
+    AddMovieFormComponent,
+    AddScreeningFormComponent
   ],
   imports: [
     BrowserModule,

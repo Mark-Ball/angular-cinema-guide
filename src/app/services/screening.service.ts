@@ -28,7 +28,7 @@ export class ScreeningService {
   createScreening(movId: number, cinId: number, t: string): void {
     screenings.push({
       id: this.screenings.length + 1,
-      time: time,
+      time: t,
       movieId: movId,
       cinemaId: cinId
     })
