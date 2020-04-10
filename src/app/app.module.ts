@@ -12,6 +12,8 @@ import { PosterComponent } from './components/poster/poster.component';
 import { MovieComponent } from './components/pages/movie/movie.component';
 import { AddMovieFormComponent } from './components/forms/add-movie-form/add-movie-form.component';
 import { AddScreeningFormComponent } from './components/forms/add-screening-form/add-screening-form.component';
+import { CinemaComponent } from './components/pages/cinema/cinema.component';
+import { AddCinemaFormComponent } from './components/forms/add-cinema-form/add-cinema-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AddScreeningFormComponent } from './components/forms/add-screening-form
     PosterComponent,
     MovieComponent,
     AddMovieFormComponent,
-    AddScreeningFormComponent
+    AddScreeningFormComponent,
+    CinemaComponent,
+    AddCinemaFormComponent
   ],
   imports: [
     BrowserModule,
