@@ -26,7 +26,6 @@ export class ScreeningService {
   }
 
   createScreening(movId: number, cinId: number, t: string): void {
-    console.log('createScreening called with: ', movId, cinId, t)
     screenings.push({
       id: this.screenings.length + 1,
       time: t,

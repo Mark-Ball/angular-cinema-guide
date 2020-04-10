@@ -1,7 +1,7 @@
 {{ diagnostic }}
 <div class="container">
     <h1>Enter details for a new screening</h1>
-    <form (ngSubmit)="onSubmit()" #screeningForm="ngForm">
+    <form (ngSubmit)="onSubmit(); screeningForm.reset()" #screeningForm="ngForm">
         <div class="form-group">
             <label for="cinema">Cinema</label>
             <select

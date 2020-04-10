@@ -29,7 +29,8 @@ export class AddScreeningFormComponent implements OnInit {
 
   onSubmit(): void {
     const { movieId, cinemaId, time } = this.screening;
-    this.screeningService.createScreening(movieId, cinemaId, time);
+    // unary operator + used to convert strings to numbers
+    this.screeningService.createScreening(+movieId, +cinemaId, time);
   }
 
   get diagnostic() {

@@ -31,7 +31,7 @@ export class MovieComponent implements OnInit {
   ngOnInit(): void {
     // extract id from params
     this.route.paramMap.subscribe(params => {
-      this.id = parseInt(params.get('movieId'));
+      this.id = +params.get('movieId');
     })
     // get movie based on id
     this.movie = this.movieService.getMovie(this.id);
@@ -40,7 +40,6 @@ export class MovieComponent implements OnInit {
 
     // loop through cinemas and get screenings at each
     this.screeningsByCinema = this.getScreeningsByCinema();
-    console.log(this.screeningsByCinema);
   }
 
   getScreeningsByCinema(): Array<{ cinemaId: number, cinemaName: string, screenings: Array<string> }> {
