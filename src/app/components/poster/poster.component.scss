@@ -1,5 +1,7 @@
 .container {
     cursor: pointer;
+    display: inline-block;
+    height: 300px;
     width: 200px;
     margin: 20px;
 }
@@ -16,5 +18,7 @@ div :nth-child(2) {
 }
 
 img {
+    object-fit: fill;
+    height: 100%;
     width: 100%;
 }
