@@ -54,4 +54,9 @@ export class MovieComponent implements OnInit {
     return result;
   }
 
+  // trigger an update when new data is entered in child
+  updateScreenings() {
+    this.screeningsByCinema = this.getScreeningsByCinema();
+  }
+
 }
