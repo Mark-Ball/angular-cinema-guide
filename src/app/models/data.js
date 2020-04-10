@@ -40,128 +40,128 @@ export const cinemas = [
 export const screenings = [
 	{
 		id: 1,
-    time: '9:00',
-    movieId: 1,
-    cinemaId: 1
+		time: '9:00',
+		movieId: 1,
+		cinemaId: 1
 	},
 	{
 		id: 2,
-    time: '11:00',
-    movieId: 1,
-    cinemaId: 1
+		time: '11:00',
+		movieId: 1,
+		cinemaId: 1
 	},
 	{
 		id: 3,
-    time: '17:00',
-    movieId: 1,
-    cinemaId: 1
+		time: '17:00',
+		movieId: 1,
+		cinemaId: 1
 	},
 	{
 		id: 4,
-    time: '10:00',
-    movieId: 1,
-    cinemaId: 2
+		time: '10:00',
+		movieId: 1,
+		cinemaId: 2
 	},
 	{
 		id: 5,
-    time: '13:00',
-    movieId: 1,
-    cinemaId: 2
+		time: '13:00',
+		movieId: 1,
+		cinemaId: 2
 	},
 	{
 		id: 6,
-    time: '16:00',
-    movieId: 1,
-    cinemaId: 2
+		time: '16:00',
+		movieId: 1,
+		cinemaId: 2
 	},
 	{
 		id: 7,
-    time: '19:00',
-    movieId: 1,
-    cinemaId: 2
+		time: '19:00',
+		movieId: 1,
+		cinemaId: 2
 	},
 	{
 		id: 8,
-    time: '15:00',
-    movieId: 1,
-    cinemaId: 3
+		time: '15:00',
+		movieId: 1,
+		cinemaId: 3
 	},
 	{
 		id: 9,
-    time: '20:00',
-    movieId: 1,
-    cinemaId: 3
+		time: '20:00',
+		movieId: 1,
+		cinemaId: 3
 	},
 	{
 		id: 10,
-    time: '22:00',
-    movieId: 1,
-    cinemaId: 3
+		time: '22:00',
+		movieId: 1,
+		cinemaId: 3
 	},
 	{
 		id: 11,
-    time: '10:00',
-    movieId: 2,
-    cinemaId: 1
+		time: '10:00',
+		movieId: 2,
+		cinemaId: 1
 	},
 	{
 		id: 12,
-    time: '18:00',
-    movieId: 2,
-    cinemaId: 1
+		time: '18:00',
+		movieId: 2,
+		cinemaId: 1
 	},
 	{
 		id: 13,
-    time: '19:00',
-    movieId: 2,
-    cinemaId: 1
+		time: '19:00',
+		movieId: 2,
+		cinemaId: 1
 	},
 	{
 		id: 14,
-    time: '20:00',
-    movieId: 2,
-    cinemaId: 1
+		time: '20:00',
+		movieId: 2,
+		cinemaId: 1
 	},
 	{
 		id: 15,
-    time: '21:00',
-    movieId: 2,
-    cinemaId: 1
+		time: '21:00',
+		movieId: 2,
+		cinemaId: 1
 	},
 	{
 		id: 16,
-    time: '12:00',
-    movieId: 2,
-    cinemaId: 3
+		time: '12:00',
+		movieId: 2,
+		cinemaId: 3
 	},
 	{
 		id: 17,
-    time: '20:00',
-    movieId: 2,
-    cinemaId: 3
+		time: '20:00',
+		movieId: 2,
+		cinemaId: 3
 	},
 	{
 		id: 18,
-    time: '22:00',
-    movieId: 2,
-    cinemaId: 3
+		time: '22:00',
+		movieId: 2,
+		cinemaId: 3
 	},
 	{
 		id: 19,
-    time: '12:00',
-    movieId: 3,
-    cinemaId: 1
+		time: '12:00',
+		movieId: 3,
+		cinemaId: 1
 	},
 	{
 		id: 20,
-    time: '18:00',
-    movieId: 3,
-    cinemaId: 1
+		time: '18:00',
+		movieId: 3,
+		cinemaId: 1
 	},
 	{
 		id: 21,
-    time: '21:00',
-    movieId: 3,
-    cinemaId: 1
+		time: '21:00',
+		movieId: 3,
+		cinemaId: 1
 	}
 ]

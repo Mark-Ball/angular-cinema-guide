@@ -24,4 +24,13 @@ export class ScreeningService {
       screening.movieId === movId && screening.cinemaId == cinId
     ))
   }
+
+  createScreening(movId: number, cinId: number, t: string): void {
+    screenings.push({
+      id: this.screenings.length + 1,
+      time: time,
+      movieId: movId,
+      cinemaId: cinId
+    })
+  }
 }
