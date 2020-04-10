@@ -23,17 +23,23 @@ export const cinemas = [
 	{
 		id: 1,
 		name: 'Hoyts Chatswood',
-		image: ''
+		image: 'hoyts.png',
+		location: '1 Anderson St, Chatswood, 2067',
+		openingHours: '11:00 - 23:00'
 	},
 	{
 		id: 2,
 		name: 'Event Cinemas George St',
-		image: ''
+		image: 'event.png',
+		location: '505/525 George St, Sydney, 2000',
+		openingHours: '11:00 - 23:00'
 	},
 	{
 		id: 3,
 		name: 'Event Cinemas Hornsby',
-		image: ''
+		image: 'event.png',
+		location: '236 Pacific Highway, Hornsby, 2077',
+		openingHours: '11:00 - 23:00'
 	}
 ]
 

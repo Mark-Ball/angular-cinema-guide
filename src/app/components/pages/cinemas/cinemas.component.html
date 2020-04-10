@@ -1,1 +1,8 @@
-<p>cinemas works!</p>
+<h1>Cinemas</h1>
+<div>
+	<app-poster 
+		*ngFor="let cinema of cinemas" 
+		[item]="cinema" 
+		[type]="'cinema'"
+	></app-poster>
+</div>

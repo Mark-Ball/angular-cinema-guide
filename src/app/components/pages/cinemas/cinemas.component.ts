@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cinema } from '../../../Cinema';
+import { CinemaService } from '../../../services/cinema.service';
 
 @Component({
   selector: 'app-cinemas',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cinemas.component.scss']
 })
 export class CinemasComponent implements OnInit {
+  cinemas: Array<Cinema>;
 
-  constructor() { }
+  constructor(private cinemaService: CinemaService) { }
 
   ngOnInit(): void {
+    this.cinemas = this.cinemaService.getCinemas();
   }
 
 }
