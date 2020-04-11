@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cinema } from '../../../Cinema';
+import { Cinema } from '../../../models/Cinema';
 import { CinemaService } from '../../../services/cinema.service';
 
 @Component({

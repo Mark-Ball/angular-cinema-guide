@@ -6,7 +6,6 @@ import { Screening } from '../../../models/Screening';
 import { MovieService } from '../../../services/movie.service';
 import { CinemaService } from '../../../services/cinema.service';
 import { ScreeningService } from '../../../services/screening.service';
-import { movies } from '../../../models/data';
 import { createImagePath } from '../../../services/utils';
 
 @Component({
