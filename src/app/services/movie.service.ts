@@ -26,4 +26,10 @@ export class MovieService {
       description: movie.description
     });
   }
+
+  updateMovie(movie: Movie): void {
+    console.log(JSON.stringify(movie));
+    // find the movie to update
+    // change the record in that position
+  }
 }
