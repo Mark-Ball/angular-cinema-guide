@@ -1,6 +1,6 @@
 <div class="container">
-	<h1 *ngIf="!movie.id">Enter details for a new movie</h1>
-	<h1 *ngIf="movie.id">Update details for this movie</h1>
+	<h1 *ngIf="!movie">Enter details for a new movie</h1>
+	<h1 *ngIf="movie">Update details for this movie</h1>
 	<form (ngSubmit)="onSubmit(); movieForm.reset()" #movieForm="ngForm">
 		<div class="form-group">
 			<label for="name">Name</label>
@@ -9,7 +9,7 @@
 				class="form-control"
 				id="name"
 				required
-				[(ngModel)]="movieName"
+				[(ngModel)]="newMovie.name"
 				name="name"
 				#name="ngModel"
 			>
@@ -21,7 +21,7 @@
 				class="form-control"
 				id="description"
 				required
-				[(ngModel)]="movieDescription"
+				[(ngModel)]="newMovie.description"
 				name="description"
 				#description="ngModel"	
 			>

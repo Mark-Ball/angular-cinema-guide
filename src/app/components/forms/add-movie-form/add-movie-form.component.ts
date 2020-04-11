@@ -9,28 +9,32 @@ import { MovieService } from '../../../services/movie.service';
 })
 export class AddMovieFormComponent implements OnInit {
   @Input() movie: Movie;
+  newMovie: Movie;
+  movieId: number;
   movieName: string;
   movieDescription: string;
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-    this.movieName = this.movie.name;
-    this.movieDescription = this.movie.description;
-    // if component was not passed a movie, create a new blank one
-    if (!this.movie) {
-      this.movie = new Movie(null, '', '', '');
+    // if a movie is passed, take details from that movie
+    if (this.movie) {
+      const { id, name, description } = this.movie;
+      this.newMovie = new Movie(id, name, '', description);
+    // if no movie is passed, create a blank movie
+    } else {
+      this.newMovie = new Movie(null, '', '' ,'')
     }
   }
 
   onSubmit(): void {
     // update an existing movie if there was an id
     // create a new movie if there was no id
-    // if (this.movie.id) {
-    //   this.movieService.updateMovie(this.movie)
-    // } else {
-    //   this.movieService.createMovie(this.movie);
-    // }
+    if (this.newMovie.id) {
+      this.movieService.updateMovie(this.newMovie)
+    } else {
+      this.movieService.createMovie(this.newMovie);
+    }
   }
 
 }

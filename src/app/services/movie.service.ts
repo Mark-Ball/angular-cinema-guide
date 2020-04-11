@@ -28,8 +28,12 @@ export class MovieService {
   }
 
   updateMovie(movie: Movie): void {
-    console.log(JSON.stringify(movie));
-    // find the movie to update
-    // change the record in that position
+    for (let item of this.movies) {
+      if (item.id === movie.id) {
+        item.name = movie.name;
+        item.description = movie.description;
+        return;
+      }
+    }
   }
 }
