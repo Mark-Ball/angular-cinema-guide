@@ -25,6 +25,5 @@ export class MovieService {
       image: 'placeholder.png', // TODO: add image upload
       description: movie.description
     });
-    console.log(this.movies);
   }
 }

@@ -17,4 +17,14 @@ export class CinemaService {
   getCinema(id: number): Cinema {
     return this.cinemas.filter(cinema => cinema.id === id)[0];
   }
+
+  createCinema(cinema: Cinema): void {
+    this.cinemas.push({
+      id: this.getCinemas().length + 1,
+      name: cinema.name,
+      image: 'placeholder.png', // TODO: add image upload
+      location: cinema.location,
+      openingHours: cinema.openingHours
+    })
+  }
 }

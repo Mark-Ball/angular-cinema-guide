@@ -1,5 +1,9 @@
 export class Cinema {
-    id: number;
-    name: string;
-    image: string;
+    constructor(
+        public id: number,
+        public name: string,
+        public image: string,
+        public location: string,
+        public openingHours: string
+    ) {}
 }

@@ -1,6 +1,6 @@
 <div class="container">
 	<h1>Enter details for a new movie</h1>
-	<form (ngSubmit)="onSubmit()" #movieForm="ngForm">
+	<form (ngSubmit)="onSubmit(); movieForm.reset()" #movieForm="ngForm">
 		<div class="form-group">
 			<label for="name">Name</label>
 			<input 
