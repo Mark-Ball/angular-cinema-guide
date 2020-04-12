@@ -19,6 +19,8 @@ export class MovieComponent implements OnInit {
   imagePath: string;
   cinemas: Cinema[];
   screeningsByCinema: Array<{ cinemaId: number, cinemaName: string, screenings: Array<string> }>;
+  hideEditMovieForm: boolean = true;
+  hideAddScreeningForm: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,16 +31,12 @@ export class MovieComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // extract id from params
     this.route.paramMap.subscribe(params => {
       this.id = +params.get('movieId');
     })
-    // get movie based on id
     this.movie = this.movieService.getMovie(this.id);
     this.imagePath = createImagePath(this.movie.image);
     this.cinemas = this.cinemaService.getCinemas();
-
-    // loop through cinemas and get screenings at each
     this.screeningsByCinema = this.getScreeningsByCinema();
   }
 
@@ -66,6 +64,14 @@ export class MovieComponent implements OnInit {
   deleteScreening(id: number): void {
     this.screeningService.deleteScreening(id);
     this.updateScreenings();
+  }
+
+  toggleMovieForm(): void {
+    this.hideEditMovieForm = !this.hideEditMovieForm;
+  }
+
+  toggleAddScreeningForm(): void {
+    this.hideAddScreeningForm = !this.hideAddScreeningForm;
   }
 
 }

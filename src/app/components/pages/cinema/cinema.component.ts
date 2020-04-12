@@ -66,11 +66,11 @@ export class CinemaComponent implements OnInit {
     this.updateScreenings();
   }
 
-  showAddCinemaForm(): void {
+  toggleAddCinemaForm(): void {
     this.hideEditCinemaForm = !this.hideEditCinemaForm;
   }
 
-  showAddScreeningForm(): void {
+  toggleAddScreeningForm(): void {
     this.hideAddScreeningForm = !this.hideAddScreeningForm;
   }
 

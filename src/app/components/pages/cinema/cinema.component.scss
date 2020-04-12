@@ -10,3 +10,12 @@ p {
     display: flex;
     max-height: 313px;
 }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+
+    button {
+        margin: 0 10px;
+    }
+}

@@ -19,14 +19,28 @@
 		</ng-container>
 	</div>
 </div>
-<div>
+<div class="button-container">
+	<button
+		class="btn btn-success"
+		(click)="toggleAddScreeningForm()"
+	>
+		{{ hideAddScreeningForm ? "Add Screening" : "Hide Form" }}
+	</button>
+	<button
+	class="btn btn-success"
+	(click)="toggleMovieForm()"
+	>
+		{{ hideEditMovieForm ? "Update Movie" : "Hide Form" }}
+	</button>
 	<button class="btn btn-danger" (click)="deleteMovie(movie.id)">Delete movie</button>
 </div>
-<app-add-movie-form
-	[movie]="movie"	
-></app-add-movie-form>
 <app-add-screening-form
+	[hidden]="hideAddScreeningForm"
 	[renderedInsideOf]="'movie'"
 	[resourceId]="movie.id"
 	(updater)="updateScreenings()"
 ></app-add-screening-form>
+<app-add-movie-form
+	[hidden]="hideEditMovieForm"
+	[movie]="movie"	
+></app-add-movie-form>
