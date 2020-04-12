@@ -15,6 +15,9 @@
 		</ng-container>
 	</div>
 </div>
+<div>
+	<button class="btn btn-danger" (click)="deleteCinema(cinema.id)">Delete cinema</button>
+</div>
 <app-add-cinema-form
 	[cinema]="cinema"
 ></app-add-cinema-form>

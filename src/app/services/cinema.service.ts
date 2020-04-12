@@ -38,4 +38,14 @@ export class CinemaService {
       }
     }
   }
+
+  deleteCinema(id: number) {
+    for (let i in this.cinemas) {
+      if (this.cinemas[i].id === id) {
+        this.cinemas.splice(+i, 1);
+        return;
+      }
+    }
+  }
+
 }
