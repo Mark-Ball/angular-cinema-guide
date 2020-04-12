@@ -62,4 +62,9 @@ export class CinemaComponent implements OnInit {
     this.router.navigate(['/cinemas']);
   }
 
+  deleteScreening(id: number): void {
+    this.screeningService.deleteScreening(id);
+    this.updateScreenings();
+  }
+
 }
