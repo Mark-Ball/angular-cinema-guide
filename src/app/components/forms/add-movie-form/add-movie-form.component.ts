@@ -23,7 +23,7 @@ export class AddMovieFormComponent implements OnInit {
       this.newMovie = new Movie(id, name, '', description);
     // if no movie is passed, create a blank movie
     } else {
-      this.newMovie = new Movie(null, '', '' ,'')
+      this.newMovie = new Movie(null, '', '' ,'');
     }
   }
 
@@ -31,7 +31,7 @@ export class AddMovieFormComponent implements OnInit {
     // update an existing movie if there was an id
     // create a new movie if there was no id
     if (this.newMovie.id) {
-      this.movieService.updateMovie(this.newMovie)
+      this.movieService.updateMovie(this.newMovie);
     } else {
       this.movieService.createMovie(this.newMovie);
     }

@@ -27,4 +27,15 @@ export class CinemaService {
       openingHours: cinema.openingHours
     })
   }
+
+    updateCinema(cinema: Cinema): void {
+    for (let item of this.cinemas) {
+      if (item.id === cinema.id) {
+        item.name = cinema.name;
+        item.location = cinema.location;
+        item.openingHours = cinema.openingHours;
+        return;
+      }
+    }
+  }
 }

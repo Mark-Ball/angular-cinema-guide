@@ -1,5 +1,6 @@
 <div class="container">
-	<h1>Enter details for a new cinema</h1>
+	<h1 *ngIf="!cinema">Enter details for a new cinema</h1>
+	<h1 *ngIf="cinema">Update details for this cinema</h1>
 	<form (ngSubmit)="onSubmit(); cinemaForm.reset()" #cinemaForm="ngForm">
 		<div class="form-group">
 			<label for="name">Name</label>
@@ -8,7 +9,7 @@
 				class="form-control"
 				id="name"
 				required
-				[(ngModel)]="cinema.name"
+				[(ngModel)]="newCinema.name"
 				name="name"
 				#name="ngModel"
 			>
@@ -20,7 +21,7 @@
 				class="form-control"
 				id="location"
 				required
-				[(ngModel)]="cinema.location"
+				[(ngModel)]="newCinema.location"
 				name="location"
 				#location="ngModel"	
 			>
@@ -32,7 +33,7 @@
 				class="form-control"
 				id="openingHours"
 				required
-				[(ngModel)]="cinema.openingHours"
+				[(ngModel)]="newCinema.openingHours"
 				name="openingHours"
 				#openingHours="ngModel"	
 			>
@@ -41,7 +42,7 @@
 			type="submit"
 			class="btn btn-success"
 		>
-			Add cinema
+			Submit
 		</button>
 	</form>
 </div>

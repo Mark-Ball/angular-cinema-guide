@@ -15,6 +15,9 @@
 		</ng-container>
 	</div>
 </div>
+<app-add-cinema-form
+	[cinema]="cinema"
+></app-add-cinema-form>
 <app-add-screening-form
 	[renderedInsideOf]="'cinema'"
 	[resourceId]="cinema.id"
