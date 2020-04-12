@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../../../models/Movie';
 import { Cinema } from '../../../models/Cinema';
 import { Screening } from '../../../models/Screening';
@@ -22,6 +22,7 @@ export class MovieComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private movieService: MovieService,
     private cinemaService: CinemaService,
     private screeningService: ScreeningService
@@ -54,8 +55,13 @@ export class MovieComponent implements OnInit {
   }
 
   // trigger an update when new data is entered in child
-  updateScreenings() {
+  updateScreenings(): void {
     this.screeningsByCinema = this.getScreeningsByCinema();
+  }
+
+  deleteMovie(id: number): void {
+    this.movieService.deleteMovie(id);
+    this.router.navigate(['/movies']);
   }
 
 }
