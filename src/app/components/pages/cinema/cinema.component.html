@@ -6,13 +6,14 @@
 		<p>Opening hours: {{ cinema.openingHours }}</p>
 	</div>
 </div>
-<div>
-	<h2>Screenings</h2>
+<div class="screenings-container">
+	<h2>Screenings (click to delete)</h2>
 	<div class='flex' *ngFor="let item of screeningsByMovie">
 		<ng-container *ngIf="item.screenings[0]">
 			<p>{{ item.movieName }}:</p>
 			<p 
 				*ngFor="let screening of item.screenings"
+				class="screening-time"
 				(click)="deleteScreening(screening.id)"
 			>
 				{{ screening.time }}

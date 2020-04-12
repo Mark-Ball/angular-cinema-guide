@@ -11,6 +11,14 @@ p {
     max-height: 313px;
 }
 
+.screenings-container {
+    margin: 0 20px;;
+}
+
+.screening-time {
+    cursor: pointer;
+}
+
 .button-container {
     display: flex;
     justify-content: center;
