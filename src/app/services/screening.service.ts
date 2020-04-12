@@ -33,4 +33,14 @@ export class ScreeningService {
       cinemaId: cinId
     })
   }
+
+  deleteScreening(id: number): void {
+    for (let i in this.screenings) {
+      if (this.screenings[i].id === id) {
+        this.screenings.splice(+i, 1);
+        return;
+      }
+    }
+  }
+
 }

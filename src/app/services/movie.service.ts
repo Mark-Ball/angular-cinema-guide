@@ -39,7 +39,7 @@ export class MovieService {
 
   deleteMovie(id: number) {
     for (let i in this.movies) {
-      if (movies[i].id === id) {
+      if (this.movies[i].id === id) {
         this.movies.splice(+i, 1);
         return;
       }

@@ -10,7 +10,12 @@
 	<div class='flex' *ngFor="let item of screeningsByCinema">
 		<ng-container *ngIf="item.screenings[0]">
 			<p>{{ item.cinemaName }}:</p>
-			<p *ngFor="let screening of item.screenings">{{ screening.time }}</p>
+			<p 
+				*ngFor="let screening of item.screenings"
+				(click)="deleteScreening(screening.id)"
+			>
+				{{ screening.time }}
+			</p>
 		</ng-container>
 	</div>
 </div>
