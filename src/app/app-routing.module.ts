@@ -10,7 +10,7 @@ import { CinemaComponent } from './components/pages/cinema/cinema.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/movies', pathMatch: 'full' },
   { path: 'movies', component: MoviesComponent },
   { path: 'movies/add', component: AddMovieFormComponent },
   { path: 'movies/:movieId', component: MovieComponent },
