@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../../../models/Movie';
-import { Cinema } from '../../../models/Cinema';
 import { Screening } from '../../../models/Screening';
 import { MovieService } from '../../../services/movie.service';
 import { CinemaService } from '../../../services/cinema.service';
@@ -17,7 +16,6 @@ export class MovieComponent implements OnInit {
   movie: Movie;
   id: number;
   imagePath: string;
-  cinemas: Cinema[];
   screeningsByCinema: Array<{ cinemaId: number, cinemaName: string, screenings: Array<string> }>;
   hideEditMovieForm: boolean = true;
   hideAddScreeningForm: boolean = true;
@@ -36,17 +34,17 @@ export class MovieComponent implements OnInit {
     })
     this.movie = this.movieService.getMovie(this.id);
     this.imagePath = createImagePath(this.movie.image);
-    this.cinemas = this.cinemaService.getCinemas();
     this.screeningsByCinema = this.getScreeningsByCinema();
   }
 
   getScreeningsByCinema(): Array<{ cinemaId: number, cinemaName: string, screenings: Array<string> }> {
+    const cinemas = this.cinemaService.getCinemas();
     const result = [];
-    for (let i = 1; i <= this.cinemas.length; i++) {
+    for (let cinema of cinemas) {
       result.push({
-        cinemaId: i,
-        cinemaName: this.cinemas[i - 1].name,
-        screenings: this.screeningService.getScreenings(this.id, i)
+        cinemaId: cinema.id,
+        cinemaName: cinema.name,
+        screenings: this.screeningService.getScreenings(this.id, cinema.id)
       })
     }
     return result;
