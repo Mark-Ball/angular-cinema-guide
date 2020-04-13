@@ -1,5 +1,7 @@
 # Cinema Guide
 
+Deployed on Firebase: https://cinema-guide-1f286.web.app/movies
+
 The purpose of this project was to create a platform which displays movies, cinemas, and screenings and provides CRUD functionality over these resources.
 
 ## Database structure
