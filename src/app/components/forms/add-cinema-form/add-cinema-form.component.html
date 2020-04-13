@@ -14,6 +14,12 @@
 				#name="ngModel"
 			>
 		</div>
+		<div 
+			[hidden]="name.valid || name.pristine"
+			class="alert alert-danger"
+		>
+			Please provide a name
+		</div>
 		<div class="form-group">
 			<label for="location">Location</label>
 			<input
@@ -25,6 +31,12 @@
 				name="location"
 				#location="ngModel"	
 			>
+		</div>
+		<div 
+			[hidden]="location.valid || location.pristine"
+			class="alert alert-danger"
+		>
+			Please provide a location
 		</div>
 		<div class="form-group">
 			<label for="openingHours">Opening Hours</label>
@@ -38,9 +50,16 @@
 				#openingHours="ngModel"	
 			>
 		</div>
+		<div 
+			[hidden]="openingHours.valid || openingHours.pristine"
+			class="alert alert-danger"
+		>
+			Please provide a location
+		</div>
 		<button 
 			type="submit"
 			class="btn btn-success"
+			[disabled]="!cinemaForm.form.valid"
 		>
 			Submit
 		</button>

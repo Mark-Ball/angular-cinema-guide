@@ -14,6 +14,12 @@
 				#name="ngModel"
 			>
 		</div>
+		<div 
+			[hidden]="name.valid || name.pristine"
+			class="alert alert-danger"
+		>
+			Please provide a name
+		</div>
 		<div class="form-group">
 			<label for="description">Description</label>
 			<input
@@ -26,9 +32,16 @@
 				#description="ngModel"	
 			>
 		</div>
+		<div 
+			[hidden]="description.valid || description.pristine"
+			class="alert alert-danger"
+		>
+			Please provide a description
+		</div>
 		<button 
 			type="submit"
 			class="btn btn-success"
+			[disabled]="!movieForm.form.valid"
 		>
 			Submit
 		</button>
