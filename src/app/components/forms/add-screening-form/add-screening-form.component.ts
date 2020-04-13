@@ -33,8 +33,7 @@ export class AddScreeningFormComponent implements OnInit {
   }
 
   checkValidTime(event) {
-    this.invalidTime = /\d{1,2}:\d\d/.test(event.target.value) ? false : true;
-    console.log(this.invalidTime);
+    this.invalidTime = /^\d{1,2}:\d\d$/.test(event.target.value) ? false : true;
   }
 
   onSubmit(): void {
