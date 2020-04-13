@@ -18,6 +18,7 @@ export class AddScreeningFormComponent implements OnInit {
   @Input() renderedInsideOf: string;
   @Input() resourceId: number;
   @Output() updater = new EventEmitter();
+  invalidTime: boolean;
 
   constructor(
     private movieService: MovieService,
@@ -28,6 +29,12 @@ export class AddScreeningFormComponent implements OnInit {
   ngOnInit(): void {
     this.movies = this.movieService.getMovies();
     this.cinemas = this.cinemaService.getCinemas();
+    this.invalidTime = true;
+  }
+
+  checkValidTime(event) {
+    this.invalidTime = /\d{1,2}:\d\d/.test(event.target.value) ? false : true;
+    console.log(this.invalidTime);
   }
 
   onSubmit(): void {
@@ -40,6 +47,7 @@ export class AddScreeningFormComponent implements OnInit {
     }
     this.screeningService.createScreening(+movieId, +cinemaId, time);
     this.updater.emit(); // causes parent to update screenings
+    this.invalidTime = true;
   }
 
 }

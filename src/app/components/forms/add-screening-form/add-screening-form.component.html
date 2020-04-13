@@ -34,11 +34,20 @@
                 required
                 [(ngModel)]="screening.time"
                 name="time"
+                #time="ngModel"
+                (keyup)="checkValidTime($event)"
             >
+        </div>
+        <div 
+            class="alert alert-danger"
+            [hidden]="!invalidTime || time.pristine"
+        >
+            Time must be in 24 hour time e.g. 20:30
         </div>
         <button 
             type="submit"
             class="btn btn-success"
+            [disabled]="invalidTime"
         >
             Add
         </button>
