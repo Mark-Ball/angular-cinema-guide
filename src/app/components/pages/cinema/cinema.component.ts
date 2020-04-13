@@ -17,7 +17,6 @@ export class CinemaComponent implements OnInit {
   cinema: Cinema;
   id: number;
   imagePath: string;
-  movies: Movie[];
   screeningsByMovie: Array<{ movieId: number, movieName: string, screenings: Array<string> }>;
   hideEditCinemaForm: boolean = true;
   hideAddScreeningForm: boolean = true;
@@ -36,23 +35,23 @@ export class CinemaComponent implements OnInit {
     })
     this.cinema = this.cinemaService.getCinema(this.id);
     this.imagePath = createImagePath(this.cinema.image);
-    this.movies = this.movieService.getMovies();
     this.screeningsByMovie = this.getScreeningsByMovie();
   }
 
   getScreeningsByMovie(): Array<{ movieId: number, movieName: string, screenings: Array<string> }> {
+    const movies = this.movieService.getMovies();
     const result = [];
-    for (let i = 1; i <= this.movies.length; i++) {
+    for (let movie of movies) {
       result.push({
-        movieId: i,
-        movieName: this.movies[i - 1].name,
-        screenings: this.screeningService.getScreenings(i, this.id)
+        movieId: movie.id,
+        movieName: movie.name,
+        screenings: this.screeningService.getScreenings(movie.id, this.id)
       })
     }
     return result;
   }
 
-  updateScreenings() {
+  updateScreenings(): void {
     this.screeningsByMovie = this.getScreeningsByMovie();
   }
 

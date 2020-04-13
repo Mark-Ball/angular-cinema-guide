@@ -21,7 +21,7 @@ export class ScreeningService {
     }
     // if both ids provided, filter based on both
     return this.screenings.filter(screening => (
-      screening.movieId === movId && screening.cinemaId == cinId
+      screening.movieId === movId && screening.cinemaId === cinId
     ))
   }
 
