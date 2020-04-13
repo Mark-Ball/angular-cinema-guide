@@ -8,7 +8,7 @@ import { CinemaService } from '../../../services/cinema.service';
   styleUrls: ['./cinemas.component.scss']
 })
 export class CinemasComponent implements OnInit {
-  cinemas: Array<Cinema>;
+  cinemas: Cinema[];
 
   constructor(private cinemaService: CinemaService) { }
 

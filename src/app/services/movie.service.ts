@@ -22,7 +22,7 @@ export class MovieService {
     this.movies.push({
       id: this.getMovies().length + 1,
       name: movie.name,
-      image: 'placeholder.png', // TODO: add image upload
+      image: 'placeholder.png',
       description: movie.description
     });
   }

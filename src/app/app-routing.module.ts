@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './components/pages/home/home.component';
 import { MoviesComponent } from './components/pages/movies/movies.component';
 import { AddMovieFormComponent } from './components/forms/add-movie-form/add-movie-form.component';
 import { MovieComponent } from './components/pages/movie/movie.component';

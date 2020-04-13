@@ -22,7 +22,7 @@ export class CinemaService {
     this.cinemas.push({
       id: this.getCinemas().length + 1,
       name: cinema.name,
-      image: 'placeholder.png', // TODO: add image upload
+      image: 'placeholder.png',
       location: cinema.location,
       openingHours: cinema.openingHours
     })
