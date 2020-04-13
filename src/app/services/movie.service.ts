@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Movie } from '../models/Movie';
 import { movies } from '../models/data';
+import { ScreeningService } from './screening.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { movies } from '../models/data';
 export class MovieService {
   movies: Movie[] = movies;
 
-  constructor() { }
+  constructor(private screeningService: ScreeningService) { }
 
   getMovies(): Movie[] {
     return this.movies;
@@ -41,8 +42,12 @@ export class MovieService {
     for (let i in this.movies) {
       if (this.movies[i].id === id) {
         this.movies.splice(+i, 1);
-        return;
+        break;
       }
+    }
+    // when deleting a movie, also delete screenings of that movie
+    for (let screening of this.screeningService.getScreenings(id, null)) {
+      this.screeningService.deleteScreening(screening.id);
     }
   }
 
