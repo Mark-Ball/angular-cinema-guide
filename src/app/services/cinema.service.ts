@@ -20,8 +20,16 @@ export class CinemaService {
   }
 
   createCinema(cinema: Cinema): void {
+    // if there are cinemas, id is 1 greater than id of last element, else id is 1
+    // this handles the case where all cinemas have been deleted
+    let id;
+    if (this.cinemas[0]) {
+      id = this.cinemas[this.cinemas.length - 1].id + 1;
+    } else {
+      id = 1;
+    }
     this.cinemas.push({
-      id: this.getCinemas().length + 1,
+      id,
       name: cinema.name,
       image: 'placeholder.png',
       location: cinema.location,
@@ -47,7 +55,7 @@ export class CinemaService {
         break;
       }
     }
-    // when deleting a cinema, also delete screenings at that cinema
+    // delete orphan records
     for (let screening of this.screeningService.getScreenings(null, id)) {
       this.screeningService.deleteScreening(screening.id);
     }
