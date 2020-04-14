@@ -26,8 +26,16 @@ export class ScreeningService {
   }
 
   createScreening(movId: number, cinId: number, t: string): void {
+    // if there are screenings, id is 1 greater than id of last element, else id is 1
+    // this handles the case where all screenings have been deleted
+    let id;
+    if (this.screenings[0]) {
+      id = this.screenings[this.screenings.length - 1].id + 1;
+    } else {
+      id = 1;
+    }
     screenings.push({
-      id: this.screenings.length + 1,
+      id,
       time: t,
       movieId: movId,
       cinemaId: cinId
